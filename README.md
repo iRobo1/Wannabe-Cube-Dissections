@@ -1,2 +1,2 @@
-# Wannabe-Cube-Dissections
+# Wannabe Cube Dissections
 Some solvers for finding Wannabe Cube dissections
