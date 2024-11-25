@@ -1,7 +1,7 @@
 # Wannabe Cube Dissections
 This repository contains some solvers for finding Wannabe Cube dissections. The problem was posed by Chris Wolird. See https://math.stackexchange.com/questions/4528483/other-solutions-to-cubing-the-cube-variation for more information.
 
-A Wannabe Cube is a cuboid with dimensions n by n+1 by n+2. The goal is to determine whether there exists a dissection of a Wannabe Cube into smaller distinct Wannabe Cubes. There exists one trivial dissection for n=5. I have proven that no Wannabe Cube with n < 77 (apart from n=5) can be dissected.
+A Wannabe Cube is a cuboid with dimensions n by n+1 by n+2. The goal is to determine whether there exists a dissection of a Wannabe Cube into smaller distinct Wannabe Cubes, except for the trivial case when n=5. I have proven that no Wannabe Cube with n < 77 (apart from n=5) can be dissected. As far as I'm aware, it is still an open question whether any other dissection exists at all. I believe it's rather unlikely that another dissection exists, and perhaps some day I'll have time to prove that :)
 
 # Files
 The repository contains 3 files that can be used to prune possible solutions or prove in general that none exist for a particular value of n.
@@ -23,10 +23,10 @@ n = 77 is too computationally expensive to check with `CubeDissections.mzn`
 ## CubeDissections.mzn
 Uses a stronger condition than `SubsetSum.mzn` to prune remaining valid subsets. Each Wannabe Cube (except the one that is being dissected) is modelled as a normal cube using its shortest side length. The program then checks if it is possible to pack all these smaller and simpler cubes into the target Wannabe Cube. If not, the problem must be unsatisfiable also in the case of Wannabe Cubes.
 
-n=75 is proven unsatisfiable with this technique. (Note, of course, for any n < 75, this could also be used.)
+n=75 is proven unsatisfiable with this technique. The program is too slow to prove cases where n > 76.
 
 ## WannabeCubeDissections.mzn
-Same as the above program but for actual Wannabe Cubes. For example, it can be used to find that n=5 is dissectable. It could also find a dissection for any subset found by `SubsetSum.mzn`; however, this is quite unlikely. I believe no other solutions except n=5 exist. Perhaps I'll have time to prove it some day :)
+Same as the above program but for actual Wannabe Cubes. For example, it can be used to find that n=5 is dissectable.
 
 # To Run
 Install MiniZinc (a language used for constraint programming) and run the file of interest. See comments in files for further information.
