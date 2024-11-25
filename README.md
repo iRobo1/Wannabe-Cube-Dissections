@@ -13,9 +13,9 @@ The repository contains 3 files that can be used to prune possible solutions or 
 The main tool of interest is `SubsetSum.mzn`. It prunes subsets (a set of smaller distinct Wannabe Cubes) that could be used to dissect a larger Wannabe Cube. It finds no valid subset that can be arranged to form a larger Wannabe Cube when n < 75. There are a number of constraints used to prune subsets:
 1. The total volume of all the Wannabe Cubes in the subset must add up to the volume of the target Wannabe Cube
 2. The 2 largest Wannabe Cubes must fit next to one another
-3. The 9 largest Wannabe Cubes can potentially fit next to one another (*an upper bound)
-4. The 10 largest Wannabe Cubes can potentially fit next to one another (*an upper bound)
-5. The 11 largest Wannabe Cubes can potentially fit next to one another (*an upper bound)
+3. The 9 largest Wannabe Cubes can potentially fit next to one another (*an upper bound, see file)
+4. The 10 largest Wannabe Cubes can potentially fit next to one another (*an upper bound, see file)
+5. The 11 largest Wannabe Cubes can potentially fit next to one another (*an upper bound, see file)
 
 *The program will only prune a subset that certainly cannot fit
 
