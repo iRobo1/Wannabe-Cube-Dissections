@@ -1,4 +1,28 @@
 /*
+MIT License
+
+Copyright (c) 2026 Sandro Karhula
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+/*
 In the following program, cubes are considered to be n by n by n (i.e., not Wannabe cubes).
 The program tests whether a set of cubes (with side lengths `cubeSizes`) can be packed into
 a Wannabe cube with the shortest side being targetCubeSize.
@@ -65,4 +89,5 @@ constraint symmetry_breaking_constraint(
 solve satisfy; % for n=100, ~38 s
 
 % use this to find whether a solution exists (counterintuitively, this searches in a better order)
+
 %solve minimize sum([min(cubes[i].x, min(cubes[i].y, cubes[i].z)) * cubes[i].l | i in index_set(cubeSizes)]); % n=100, ~21 s
